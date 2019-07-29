@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-card>
+    <ion-calendar [(ngModel)]="date"
+      (change)="onChangeDate($event)"
+      [type]="type"
+      [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+    <ion-label class="label_hora" for="horaDesde">Desde: </ion-label>
+    <ion-input class="input_hora" type="time" id="horaDesde" name="horaDesde" (focusout)="onBlurHora(this.horaCompletaDesde, 0)" [(ngModel)]="horaCompletaDesde" min="9:00" max="18:00" required></ion-input>
+    <ion-label class="label_hora" for="horaHasta">Hasta: </ion-label>
+    <ion-input class="input_hora" type="time" id="horaHasta" name="horaHasta" (focusout)="onBlurHora(this.horaCompletaHasta, 1)" [(ngModel)]="horaCompletaHasta" min="9:00" max="18:00" required></ion-input>
+  </ion-card>
+</ion-content>
